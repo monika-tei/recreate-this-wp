@@ -1,10 +1,15 @@
 :root {
-  --background-color: #;
-  --primary: #;
-  --secondary: #;
+  --background-color: #f2efea;
+  --clr-black: #18100b;
+  --clr-darkblue: #516a90;
+  --clr-skyblue: #7eaed9;
+  --clr-lightblue: #cce7ee;
+  --clr-crimson: #bf1523;
+  --text-decoration-coral: #f58972;
+  --text-decoration-yellow: #f2a516;
   --font-family: monospace;
-  /* --text-decoration-color-200: #e9cdbf;
---text-decoration-color-100: #a5b0e6;
+
+  /*--text-decoration-color-100: #a5b0e6;
 --input-border-color: #f6f6f6;
 --input-background-color: #f6f6f6; */
 }
@@ -14,4 +19,74 @@
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  color: var(--clr-black);
+}
+
+body {
+  padding: 0;
+  margin: calc((100vh / 25) * 1.563) calc((100vw / 25) * 1.563);
+  background-color: var(--background-color);
+}
+
+/*------------------the header & logo*/
+header {
+  font-family: monospace;
+  font-weight: 400;
+  border: 2px solid white;
+}
+
+header {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.logo_container {
+  width: 200px;
+  border: 1px solid blue;
+  /* margin: 0.8rem 1rem; */
+  /* height: auto; */
+}
+
+img.logo {
+  width: 100%;
+  height: auto;
+  /*to limit the size*/
+  max-width: 400px;
+}
+
+/*------------------breadcrumbs - brand categories*/
+ol {
+  margin: 1rem 0rem;
+  list-style-type: none;
+  text-transform: uppercase;
+  border: 1px solid white;
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-direction: row;
+  /* gap: 1rem; */
+}
+
+.breadcrumbs a {
+  color: var(--clr-crimson);
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+  padding: 0rem 0.5rem;
+}
+
+.breadcrumbs li::after {
+  display: inline-block;
+  content: "//";
+  font-weight: 800;
+}
+
+/*------------------Main Grid*/
+.main-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 300px));
+  gap: 2rem;
+  border: 1px solid hotpink;
 }
