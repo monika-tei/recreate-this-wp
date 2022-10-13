@@ -1,0 +1,17 @@
+:root {
+  --background-color: #;
+  --primary: #;
+  --secondary: #;
+  --font-family: monospace;
+  /* --text-decoration-color-200: #e9cdbf;
+--text-decoration-color-100: #a5b0e6;
+--input-border-color: #f6f6f6;
+--input-background-color: #f6f6f6; */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
