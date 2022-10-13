@@ -42,7 +42,7 @@ header {
 
 .logo_container {
   width: 200px;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   /* margin: 0.8rem 1rem; */
   /* height: auto; */
 }
@@ -83,10 +83,79 @@ ol {
   font-weight: 800;
 }
 
+@media (max-width: 700px) {
+  .breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .breadcrumbs a {
+    font-size: small;
+  }
+}
 /*------------------Main Grid*/
+/*brand names should be categories*/
+/*item names - for types of bike sorting*/
+/*In stock as boolean - yes or no*/
+
 .main-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 300px));
   gap: 2rem;
-  border: 1px solid hotpink;
+  padding-top: 2rem;
+  border: 1px solid white;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0.5px 10px 10px lightgrey;
+}
+
+.item img {
+  padding: 1rem;
+}
+
+.item h5 {
+  text-transform: uppercase;
+  padding-bottom: 0.5rem;
+}
+.item h4 {
+  text-transform: uppercase;
+  border-bottom: 1px solid black;
+  font-weight: 400;
+  padding-bottom: 0.5rem;
+}
+.item p {
+  border: 1px solid lightgrey;
+  padding: 0.5rem 0.4rem;
+  font-style: italic;
+}
+.btn-area {
+  display: flex;
+  justify-content: center;
+  padding: 0.4rem 0rem;
+}
+.btn-specs {
+  width: fit-content;
+  border: 1.5px solid var(--clr-crimson);
+  border-radius: 6px;
+  padding: 0.5rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  background-color: transparent;
+  cursor: pointer;
+}
+.btn-specs:hover {
+  border: 2px solid var(--clr-crimson);
+  background-color: var(--text-decoration-coral);
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn-specs:active {
+  transition: 0.1s;
+  box-shadow: 1px 2px 4px var(--text-decoration-coral);
 }
