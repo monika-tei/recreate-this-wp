@@ -30,7 +30,12 @@ function showPosts(posts) {
     console.log("here", bike._embedded["wp:term"][1]);
     const colors = bike._embedded["wp:term"][1];
 
-    colors.forEach((color) => {});
+    colors.forEach((color) => {
+      const liEl = document.createElement("li");
+      liEl.style.backgroundColor = color.slug;
+      console.log("uhuuh", liEl);
+      clone.querySelector(".colour ul").appendChild(liEl);
+    });
 
     //add title
     clone.querySelector("h4").textContent = bike.title.rendered;
@@ -39,7 +44,7 @@ function showPosts(posts) {
     clone.querySelector(".price span").textContent = bike.price;
 
     //add colors
-    clone.querySelector(".colour span").textContent = "N/A";
+    // clone.querySelector(".colour span").textContent = "N/A";
 
     //IN stock
     // clone.querySelector(".inStock span").textContent = bike.in_stock;
