@@ -93,9 +93,6 @@ ol {
   }
 }
 /*------------------Main Grid*/
-/*brand names should be categories*/
-/*item names - for types of bike sorting*/
-/*In stock as boolean - yes or no*/
 
 .main-container {
   display: grid;
