@@ -19,7 +19,6 @@ function showPosts(posts) {
     //clone it
     const clone = template.cloneNode(true);
     //POPULATE THE TEMPLATE
-    //Image, follow along the json one step at a time
     clone.querySelector("img").src =
       bike._embedded[
         "wp:featuredmedia"
@@ -28,6 +27,10 @@ function showPosts(posts) {
     // console.log("brand", bike._embedded["wp:term"][0][0].name);
     clone.querySelector("h5").textContent =
       bike._embedded["wp:term"][0][0].name;
+    console.log("here", bike._embedded["wp:term"][1]);
+    const colors = bike._embedded["wp:term"][1];
+
+    colors.forEach((color) => {});
 
     //add title
     clone.querySelector("h4").textContent = bike.title.rendered;
@@ -37,9 +40,20 @@ function showPosts(posts) {
 
     //add colors
     clone.querySelector(".colour span").textContent = "N/A";
-    //stock
-    clone.querySelector(".inStock span").textContent = bike.in_stock;
 
+    //IN stock
+    // clone.querySelector(".inStock span").textContent = bike.in_stock;
+    // how to make this into text and not number
+    // if (
+    //   (clone.querySelector(".inStock span").textContent = bike.in_stock == 0)
+    // ) {
+    //   clone.querySelector(".inStock span").textContent = "No";
+    // } else {
+    //   clone.querySelector(".inStock span").textContent = "Yes";
+    // }
+    console.log("vhd", bike.in_stock);
+    const inStock = bike.in_stock == 1 ? "Yes" : "No";
+    clone.querySelector(".inStock span").textContent = inStock;
     //find parent and append
     const parent = document.querySelector(".main-container");
     parent.appendChild(clone);
