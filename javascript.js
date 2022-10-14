@@ -11,42 +11,38 @@ async function getData() {
 
 function showPosts(posts) {
   console.log(posts);
-  posts.forEach((post) => {
-    console.log("lalala bike", post);
+  posts.forEach((bike) => {
+    // console.log(bike);
+
+    // template it
+    const template = document.querySelector("template").content;
+    //clone it
+    const clone = template.cloneNode(true);
+    //POPULATE THE TEMPLATE
+    //Image, follow along the json one step at a time
+    clone.querySelector("img").src =
+      bike._embedded[
+        "wp:featuredmedia"
+      ][0].media_details.sizes.medium.source_url;
+    //add categories
+    // console.log("brand", bike._embedded["wp:term"][0][0].name);
+    clone.querySelector("h5").textContent =
+      bike._embedded["wp:term"][0][0].name;
+
+    //add title
+    clone.querySelector("h4").textContent = bike.title.rendered;
+
+    //add price
+    clone.querySelector(".price span").textContent = bike.price;
+
+    //add colors
+    clone.querySelector(".colour span").textContent = "N/A";
+    //stock
+    clone.querySelector(".inStock span").textContent = bike.in_stock;
+
+    //find parent and append
+    const parent = document.querySelector(".main-container");
+    parent.appendChild(clone);
   });
-  // template it
-  const template = document.querySelector("template").content;
-  //clone it
-  const clone = template.cloneNode(true);
-  //add content
-
-  //clone.querySelector("h2").textContent = movie.title.rendered;
-  //console.log(movie._embedded[wp:featuremedia])....?;
-
-  //find parent and append
-  const parent = document.querySelector("main");
-  parent.appendChild(clone);
 }
 getData();
-
-//Looping sequence
-
-// function showPosts(posts) {
-//   //console.log(posts);
-//   posts.forEach((post) => {
-//     console.log("lalala", post);
-
-//     //template it
-//     const template = document.querySelector("template").content;
-//     //clone it
-//     const clone = template.cloneNode(true);
-//     //populate it
-
-//     //clone.querySelector("h2").textContent = movie.title.rendered;
-//     //console.log(movie._embedded[wp:featuremedia])....?;
-
-//     //find parent and append
-//     const parent = document.querySelector("main");
-//     parent.appendChild(clone);
-//   });
-// }
